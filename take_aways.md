@@ -15,7 +15,7 @@
             <!-- i is odd -->
         }
         ```
-    - `>>` is the[ bitwise right shift operator](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html). It will convert the decimal integer to binary digit and then do the shift.
+    - `>>` is the[bitwise right shift operator](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html). It will convert the decimal integer to binary digit and then do the shift.
         ```
         x = 00111011;
         x >> 2;
@@ -26,4 +26,15 @@
         12 >> 1 --> 110 = 6;
         6 - 1 = 5;
         ```
+---
+### [1641. Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings/description/)
+
+0. **Difficulty**: Medium
+1. **Tag**:
+    - [Math](https://leetcode.com/problem-list/math/)
+    - [DP](https://leetcode.com/problem-list/dynamic-programming/)
+    - [Combinatorics](https://leetcode.com/problem-list/combinatorics/)
+2. **Takeaways**:
+    - To initialize a 2D array in Python, the correct way is `dp = [[0] * col_len for _ in range(row_len)]`.
+
 ---
