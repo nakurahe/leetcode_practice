@@ -61,3 +61,15 @@
         
         - a must be 1, since its neighbors are not 1 so there's no way to form a size-2 square.
 ---
+
+### [1043. Partition Array for Maximum Sum](https://leetcode.com/problems/partition-array-for-maximum-sum/)
+
+0. **Difficulty**: Medium
+1. **Tag**:
+    - [Array](https://leetcode.com/problem-list/array/)
+    - [DP](https://leetcode.com/problem-list/dynamic-programming/)
+2. **Takeaways**:
+    - Two hints of this problem is pretty useful:
+        - `dp[i]` will be the answer for array A[0], ..., A[i-1].
+        - For `j = 1 .. k` that keeps everything in bounds, `dp[i]` is the maximum of `dp[i-j] + max(A[i-1], ..., A[i-j]) * j`.
+---
