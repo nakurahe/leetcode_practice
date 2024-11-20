@@ -73,3 +73,14 @@
         - `dp[i]` will be the answer for array A[0], ..., A[i-1].
         - For `j = 1 .. k` that keeps everything in bounds, `dp[i]` is the maximum of `dp[i-j] + max(A[i-1], ..., A[i-j]) * j`.
 ---
+
+### [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)
+
+0. **Difficulty**: Medium
+1. **Tag**:
+    - [String](https://leetcode.com/problem-list/string/)
+    - [DP](https://leetcode.com/problem-list/dynamic-programming/)
+    - [Backtracking](https://leetcode.com/problem-list/backtracking/)
+2. **Takeaways**:
+    - DFS to deal with arrays with the similar pattern.
+---
