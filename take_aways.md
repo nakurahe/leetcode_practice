@@ -84,3 +84,14 @@
 2. **Takeaways**:
     - DFS to deal with arrays with the similar pattern.
 ---
+
+### [1512. Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/)
+
+0. **Difficulty**: Easy
+1. **Tag**:
+    - [Array](https://leetcode.com/problem-list/array/)
+    - [Hash Table](https://leetcode.com/problem-list/hash-table/)
+    - [Math](https://leetcode.com/problem-list/math/)
+    - [Counting](https://leetcode.com/problem-list/counting/)
+2. **Takeaways**:
+    - When the result is involved with cumulative numbers, consider add the element when iterating.
