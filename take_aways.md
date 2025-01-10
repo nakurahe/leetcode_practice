@@ -1,3 +1,6 @@
+## Java Related
+- `int` deals with 32-bit signed integer, `long` deals with 64-bit signed integer. So when dealing with large numbers, such as calculating square, use `long`.
+
 ## Array
 - Binary search: is it `while(left < right)` or `while(left <= right)`?
     - When `right` is a valid index of the array (e.g. `int[] nums.length - 1`) then it should be `left <= right`; similarly when right is not a valid index of the array we should use `left < right`.
