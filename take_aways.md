@@ -1,3 +1,8 @@
+## Array
+- Binary search: is it `while(left < right)` or `while(left <= right)`?
+    - When `right` is a valid index of the array (e.g. `int[] nums.length - 1`) then it should be `left <= right`; similarly when right is not a valid index of the array we should use `left < right`.
+    - In the former case, new `left` and `right` should not be `mid` but `mid - 1` or `mid + 1`.
+
 ### [338. Counting Bits](https://leetcode.com/problems/counting-bits/)
 
 0. **Difficulty**: Easy
