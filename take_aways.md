@@ -11,6 +11,8 @@
 
 - **Arrays in Memory**: The address of arrays in memory is consistent, so that it's theoretically not possible to *delete* an element. Instead, we can **overwrite** that element. E.g. `nums[i] = someValue;`
 
+- **Two Pointers**: When dealing with arrays with heavy head and tail but light middle, consider using two pointers to iterate from both ends. e.g. [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/).
+
 ### [338. Counting Bits](https://leetcode.com/problems/counting-bits/)
 
 0. **Difficulty**: Easy
