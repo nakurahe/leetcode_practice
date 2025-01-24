@@ -5,9 +5,11 @@
 - A square number is 1+3+5+7+...+2n-1 = (2n-1 + 1) * n/2 = n^2.
 
 ## Array
-- Binary search: is it `while(left < right)` or `while(left <= right)`?
+- **Binary Search**: is it `while(left < right)` or `while(left <= right)`?
     - When `right` is a valid index of the array (e.g. `int[] nums.length - 1`) then it should be `left <= right`; similarly when right is not a valid index of the array we should use `left < right`.
     - In the former case, new `left` and `right` should not be `mid` but `mid - 1` or `mid + 1`.
+
+- **Arrays in Memory**: The address of arrays in memory is consistent, so that it's theoretically not possible to *delete* an element. Instead, we can **overwrite** that element. E.g. `nums[i] = someValue;`
 
 ### [338. Counting Bits](https://leetcode.com/problems/counting-bits/)
 
