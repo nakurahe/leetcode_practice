@@ -1,4 +1,35 @@
+
+import java.util.ArrayDeque;
+import java.util.Arrays;
+
 class Solution {
+    // Another solution is to use stack.
+    // Time complexity: O(n)
+    // Space complexity: O(n)
+        public boolean backspaceCompareStack(String s, String t) {
+        ArrayDeque<Character> sStack = new ArrayDeque<>();
+        ArrayDeque<Character> tStack = new ArrayDeque<>();
+
+        for (char c: s.toCharArray()) {
+            if (c == '#') {
+                sStack.pollLast();
+            } else {
+                sStack.add(c);
+            }
+        }
+
+        for (char c: t.toCharArray()) {
+            if (c == '#') {
+                tStack.pollLast();
+            } else {
+                tStack.add(c);
+            }
+        }
+
+        return Arrays.equals(sStack.toArray(), tStack.toArray());
+    }
+
+
     // Not the optimal solution since it's O(n^2) time complexity
     // and takes too much space as well.
     public boolean backspaceCompare(String s, String t) {
