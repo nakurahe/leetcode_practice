@@ -13,6 +13,21 @@
 
 - **Two Pointers**: When dealing with arrays with heavy head and tail but light middle, consider using two pointers to iterate from both ends. e.g. [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/).
 
+- **Sliding Window**: When dealing with subarrays, consider using sliding window to reduce the time complexity. e.g. [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/). Here's one template for such kind of problem:
+    ```java
+    int left = 0, right = 0;
+    while (right < nums.length) {
+        // expand the window
+        ...
+        while (/* window meets the requirement */) {
+            // update the result
+            ...
+            // shrink the window
+            ...
+        }
+    }
+    ```
+
 ### [338. Counting Bits](https://leetcode.com/problems/counting-bits/)
 
 0. **Difficulty**: Easy
