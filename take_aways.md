@@ -16,13 +16,15 @@
 - **Sliding Window**: When dealing with subarrays, consider using sliding window to reduce the time complexity. e.g. [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/). Here's one template for such kind of problem:
     ```java
     int left = 0, right = 0;
+    // usually use the hash map to store the value?
+    HashMap<T, T> window = new HashMap<>();
     while (right < nums.length) {
         // expand the window
         ...
         while (/* window meets the requirement */) {
             // update the result
             ...
-            // shrink the window
+            // shrink the window to let the window meet the requirement
             ...
         }
     }
