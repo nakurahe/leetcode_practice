@@ -4,6 +4,12 @@
 ## Math
 - A square number is 1+3+5+7+...+2n-1 = (2n-1 + 1) * n/2 = n^2.
 
+## String
+- **Anagram and Palindrome**: If using an int[] arr to store the frequency of each character, then the it should be of size 26 (for lowercase English letters) or 128 (for ASCII characters). The index of the array should be `char - 'a'` or `char`. Also, if using two pointers to check whether a string is palindrome, consider using `Character.toLowerCase()` and `Character.isLetterOrDigit()` to skip non-alphanumeric characters, and pay attention to the bound of the string.
+
+## Linked List
+- **Dummy Node**: When dealing with linked list, consider using a dummy node to avoid edge cases. For example, we could let newHead points to the original head and return newHead.next to cover the case where head == null.
+
 ## Array
 - **Binary Search**: is it `while(left < right)` or `while(left <= right)`?
     - When `right` is a valid index of the array (e.g. `int[] nums.length - 1`) then it should be `left <= right`; similarly when right is not a valid index of the array we should use `left < right`.
