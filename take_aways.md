@@ -1,5 +1,15 @@
 ## Java Related
 - `int` deals with 32-bit signed integer, `long` deals with 64-bit signed integer. So when dealing with large numbers, such as calculating square, use `long`.
+- `int` is a primitive type, so it cannot be `null`. If you want to use `null` as a value, use `Integer` instead.
+- `int[]` is an array of integers, `List<Integer>` is a list of integers. `int[]` is faster than `List<Integer>`.
+- To initialize a 2D array in Java, the correct way is `int[][] dp = new int[row_len][col_len];`.
+- `Arrays.asList()` returns a fixed-size list backed by the specified array. So if you want to modify the list, you should use `new ArrayList<>(Arrays.asList())`. E.g.
+```java
+int[] arr = {1, 2, 3};
+List<Integer> list = new ArrayList<>(Arrays.asList(arr));
+```
+
+
 
 ## Math
 - A square number is 1+3+5+7+...+2n-1 = (2n-1 + 1) * n/2 = n^2.
