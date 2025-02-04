@@ -8,7 +8,53 @@
 int[] arr = {1, 2, 3};
 List<Integer> list = new ArrayList<>(Arrays.asList(arr));
 ```
-
+- `Arrays.sort()` sorts the array in place, so if you want to keep the original array, you should make a copy of it. E.g.
+```java
+int[] arr = {3, 2, 1};
+int[] copy = arr.clone();  // or int[] copy = Arrays.copyOf(arr, arr.length);
+Arrays.sort(arr);
+```
+- `Arrays.fill()` fills the array with the specified value. E.g.
+```java
+int[] arr = new int[3];
+Arrays.fill(arr, 1);
+```
+- `Arrays.equals()` compares two arrays to determine if they are equal. E.g.
+```java
+int[] arr1 = {1, 2, 3};
+int[] arr2 = {1, 2, 3};
+Arrays.equals(arr1, arr2); // true
+```
+- `Arrays.binarySearch()` searches the specified array for the specified value using the binary search algorithm. E.g.
+```java
+int[] arr = {1, 2, 3};
+Arrays.binarySearch(arr, 2); // 1
+```
+- `Arrays.stream()` returns a sequential `Stream` with the specified array as its source. E.g.
+```java
+int[] arr = {1, 2, 3};
+int sum = Arrays.stream(arr).sum();
+```
+- `Arrays.stream().mapToObj().collect(Collectors.toList())` is a common way to convert an array to a list. E.g.
+```java
+int[] arr = {1, 2, 3};
+List<Integer> list = Arrays.stream(arr).mapToObj(i -> i).collect(Collectors.toList());  // toSet() for set
+```
+- `Arrays.stream().mapToObj().toArray()` is a common way to convert an array to a list. E.g.
+```java
+int[] arr = {1, 2, 3};
+Integer[] list = Arrays.stream(arr).mapToObj(i -> i).toArray(Integer[]::new);
+```
+- `Arrays.stream().mapToObj().collect(Collectors.joining())` is a common way to convert an array to a string. E.g.
+```java
+int[] arr = {1, 2, 3};
+String str = Arrays.stream(arr).mapToObj(i -> String.valueOf(i)).collect(Collectors.joining());
+``` 
+- `Arrays.stream().mapToObj().collect(Collectors.partitioningBy())` is a common way to convert an array to a map with partitioning. E.g.
+```java
+int[] arr = {1, 2, 3};
+Map<Boolean, List<Integer>> map = Arrays.stream(arr).mapToObj(i -> i).collect(Collectors.partitioningBy(i -> i % 2 == 0));
+```
 
 
 ## Math
