@@ -16,7 +16,7 @@ class Solution:
                     left_ast.append(ast)
                 elif abs(right_ast[-1]) == abs(ast):
                     right_ast.pop()
-        
+
         return list(left_ast) + list(right_ast)
 
 

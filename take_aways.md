@@ -75,7 +75,7 @@ Map<Boolean, List<Integer>> map = Arrays.stream(arr).mapToObj(i -> i).collect(Co
 
 - **Two Pointers**: When dealing with arrays with heavy head and tail but light middle, consider using two pointers to iterate from both ends. e.g. [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/).
 
-- **Sliding Window**: When dealing with subarrays, consider using sliding window to reduce the time complexity. e.g. [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/). Here's one template for such kind of problem:
+- **Sliding Window**: When dealing with sub arrays (especially **sub array sum**), consider using sliding window to reduce the time complexity. e.g. [209. Minimum Size Subarray Sum](https://leetcode.com/problems/minimum-size-subarray-sum/). Here's one template for such kind of problem:
     ```java
     int left = 0, res = 0;
     // usually use the hash map or set to store the value.
