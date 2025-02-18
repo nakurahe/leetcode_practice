@@ -56,6 +56,43 @@ int[] arr = {1, 2, 3};
 Map<Boolean, List<Integer>> map = Arrays.stream(arr).mapToObj(i -> i).collect(Collectors.partitioningBy(i -> i % 2 == 0));
 ```
 
+## Backtracking
+- **Backtracking**: Backtracking is a general algorithm for finding all (or some) solutions to some computational problems, notably constraint satisfaction problems, that incrementally builds candidates to the solutions, and abandons a candidate as soon as it determines that the candidate cannot possibly be completed to a valid solution. It is a depth-first search algorithm.
+- **How to Identify a Backtracking Problem**: The problem statement often asks for "all possible sequences", "combinations", or "permutations" that satisfy certain conditions. This signals that you need to systematically explore multiple choices, typically one step at a time.
+- **Allowable Constraints**: If the input size `n` is small (often `n <= 15` or so), a solution that explores many or all permutations can still be feasible within time limits.
+- **Need to Handle Repetitions or Check for Uniqueness**: When the problem involves repeated elements (like repeated letters or numbers), and you must avoid duplicating the same result, backtracking with a frequency count or a visited array is often used.
+- **Backtracking Template**:
+    ```python
+    def backtrack(candidate, state):
+        if find_solution(candidate):
+            output(candidate)
+            return
+        for next_candidate in list_of_candidates:
+            if is_valid(next_candidate, state):
+                state = update_state(next_candidate, state)
+                backtrack(next_candidate, state)
+                state = revert_state(next_candidate, state)
+    ```
+    ```java
+    void backtrack(int[] candidate, int state) {
+        if (findSolution(candidate)) {
+            output(candidate);
+            return;
+        }
+        for (int nextCandidate : listOfCandidates) {
+            if (isValid(nextCandidate, state)) {
+                state = updateState(nextCandidate, state);
+                backtrack(nextCandidate, state);
+                state = revertState(nextCandidate, state);
+            }
+        }
+    }
+    ```
+- **How to Solve a Backtracking Problem**:
+    1. **Decide the State**: The state in the problem is the information that defines each step. It is the information that we need to pass to the recursive function. It is the information that will help us make decisions at each step.
+    2. **Formulate the Recurrence**: The next step is to figure out how to make a decision based on the state. This means figuring out the condition for terminating the recursion and the condition for skipping a recursive call.
+    3. **Decide the Parameters**: The parameters are the information that we need to pass to the recursive function. The parameters should be the state information that we decided in the first step.
+    4. **Decide the Return Value**: The return value is the information that we need to pass back to the caller of the recursive function. It should be the solution to the subproblem that the recursive function is trying to solve.
 
 ## Math
 - A square number is 1+3+5+7+...+2n-1 = (2n-1 + 1) * n/2 = n^2.
