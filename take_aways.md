@@ -96,6 +96,28 @@ Map<Boolean, List<Integer>> map = Arrays.stream(arr).mapToObj(i -> i).collect(Co
 
 ## Math
 - A square number is 1+3+5+7+...+2n-1 = (2n-1 + 1) * n/2 = n^2.
+- Sieve of Eratosthenes: an ancient algorithm for finding all prime numbers up to any given limit. It does so by iteratively marking the multiples of each prime number starting from 2, the smallest prime number. Here's a [Python implementation](https://www.geeksforgeeks.org/sieve-of-eratosthenes/):
+```python
+def sieve(n):
+    prime = [True for i in range(n+1)]
+    p = 2
+
+    while (p * p <= n):
+        # If prime[p] is not
+        # changed, then it is a prime
+        if (prime[p] == True):
+
+            # Update all multiples of p
+            for i in range(p * p, n+1, p):
+                prime[i] = False
+        p += 1
+
+    # Print all prime numbers
+    for p in range(2, n+1):
+        if prime[p]:
+            print(p)
+```
+Note: 0 and 1 are not prime numbers.
 
 ## String
 - **Anagram and Palindrome**: If using an int[] arr to store the frequency of each character, then the it should be of size 26 (for lowercase English letters) or 128 (for ASCII characters). The index of the array should be `char - 'a'` or `char`. Also, if using two pointers to check whether a string is palindrome, consider using `Character.toLowerCase()` and `Character.isLetterOrDigit()` to skip non-alphanumeric characters, and pay attention to the bound of the string.
