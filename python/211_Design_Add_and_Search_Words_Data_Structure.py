@@ -1,35 +1,35 @@
+# Referred from
+# https://leetcode.com/problems/design-add-and-search-words-data-structure/solutions/3313633/python-simple-solution-easy-to-understand
+class Node:
+    def __init__(self):
+        self.children = {}
+        self.end = False
+
 class WordDictionary:
 
     def __init__(self):
-        self.root = dict()
+        self.root = Node()
         
     def addWord(self, word: str) -> None:
-        curr_status = self.root
+        curr_node = self.root
         for char in word:
-            if char not in curr_status:
-                curr_status[char] = dict()
-            curr_status = curr_status[char]
+            curr_node = curr_node.children.setdefault(char, Node())
 
-        curr_status["END"] = ""
+        curr_node.end = True
 
     def search(self, word: str) -> bool:
-        curr_status = self.root
-        for char in word:
-            if "END" in curr_status:
-                return False
-            if char == '.':
-                key = curr_status.keys()
-                for c in key:
-                    curr_status = curr_status[c]
-            elif char in curr_status:
-                curr_status = curr_status[char]
-            else:
-                return False
+        def dfs(node, index) -> bool:
+            if index == len(word):
+                return node.end
+            
+            if word[index] == ".":
+                for child in node.children.values():
+                    if dfs(child, index+1):
+                        return True
 
-        return "END" in curr_status
+            if word[index] in node.children:
+                return dfs(node.children[word[index]], index+1)
 
+            return False
 
-obj = WordDictionary()
-word = "a"
-obj.addWord(word)
-param_2 = obj.search(".a")
+        return dfs(self.root, 0)
