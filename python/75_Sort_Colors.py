@@ -1,18 +1,20 @@
-# no such key error waiting to be fixed
 def sortColors(nums: list[int]) -> None:
     """
     Do not return anything, modify nums in-place instead.
     """
-    color_dict = {}
-    for num in nums:
-        if num in color_dict:
-            color_dict[num] += 1
-        else:
-            color_dict[num] = 1
+    red = white = 0
+    blue = len(nums) - 1
 
-    nums[0: color_dict[0]] = [0] * color_dict[0]
-    nums[color_dict[0]: color_dict[0]+color_dict[1]] = [1] * color_dict[1]
-    nums[color_dict[0]+color_dict[1]:] = [2] * color_dict[2]
+    while white <= blue:
+        if nums[white] == 0:
+            nums[red], nums[white] = nums[white], nums[red]
+            white += 1
+            red += 1
+        elif nums[white] == 1:
+            white += 1
+        else:
+            nums[blue], nums[white] = nums[white], nums[blue]
+            blue -= 1
 
 
 sortColors([2, 0, 2, 1, 1, 0])
